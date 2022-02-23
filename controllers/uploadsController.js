@@ -31,7 +31,7 @@ const uploadProductImage = async (req, res) => {
   // Cloudinary handles all of the erros
   const result = await cloudinary.uploader.upload(req.files.image.tempFilePath, {
     use_filename: true,
-    folder: 'file-upload'
+    folder: 'pomade-shope/products'
   });
   // Deletes image from temp folder since we no longer need it
   fs.unlinkSync(req.files.image.tempFilePath);

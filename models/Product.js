@@ -34,4 +34,19 @@ const ProductSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  hold: {
+    type: String,
+    required: [true, "Please provide pomade hold"],
+    enum: ["light, medium, strong"],
+  },
+  type: {
+    type: String,
+    required: [true, "Please provide pomade type"],
+    enum: ["oil, water, clay, wax, other"],
+  },
+  scent: {
+    type: String,
+    required: [true, "Please provide pomade scent"],
+    maxlength: [100, "Name cannot be more than 1000 characters"],
+  },
 });
